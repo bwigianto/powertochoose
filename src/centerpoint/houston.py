@@ -84,13 +84,22 @@ def texans_big_savings_plan(x):
     return base
   if x <= 1500:
     return base + (.038)*(x - 999)
-  if x > 1500:
-    return base + (.038)*500 + (.109)*(x - 1500)
+  return base + (.038)*500 + (.109)*(x - 1500)
   
 def infuse_keep_it_simple_savings_3(x):
   if x <= 1000:
-    return 39
+    return 38
   return 99 + (0.098)*(x-1000)
+
+def life_energy_whole_life_plan_16(x):
+  if x <= 1000:
+    return 39
+  return 112 + (0.082)*(x-1000)
+
+def life_energy_whole_life_plan_12(x):
+  if x <= 1000:
+    return 39
+  return 117 + (0.079)*(x-1000)
   
 def test(f):
   #kwh = [100, 250, 500, 750, 1000, 1250, 1500, 2000]
@@ -112,6 +121,9 @@ print(test(infinite_tremendous))
 print(test(reliant_secure))
 print(test(pennywise_conserve_saver6)) #cheapest at $370
 print(test(texans_big_savings_plan))
-print(test(infuse_keep_it_simple_savings_3)
+print(test(infuse_keep_it_simple_savings_3))
+print(test(life_energy_whole_life_plan_16))
+print(test(life_energy_whole_life_plan_12))
+  
 
 
