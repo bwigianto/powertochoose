@@ -1,3 +1,5 @@
+import sys, json
+
 def discount_power_economy12(x):
   base = 3.25 + 5.47
   if x <= 500:
@@ -82,15 +84,25 @@ def test(f):
   kwh = [103, 185, 337, 615, 861, 1200, 400, 350, 200, 200, 200, 150]
   return sum(f(x) for x in kwh)
 
-print(test(discount_power_economy12))
-print(test(gexa_my_choice12))
-print(test(discount_power_easy24))
-print(test(power_express_summer24))
-print(test(infuse_savings6))
-print(test(pioneer_choice24))
-print(test(green_mountain_conserve12))
-print(test(discount_super_saver))
-print(test(pioneer_simple24))
-print(test(infinite_tremendous))
-print(test(reliant_secure))
-print(test(pennywise_conserve_saver6))
+function_dict = {
+  'discount_power_economy12': discount_power_economy12,
+  'gexa_my_choice12': gexa_my_choice12,
+  'discount_power_easy24': discount_power_easy24,
+  'power_express_summer24': power_express_summer24,
+  'infuse_savings6': infuse_savings6,
+  'pioneer_choice24': pioneer_choice24,
+  'green_mountain_conserve12': green_mountain_conserve12,
+  'discount_super_saver': discount_super_saver,
+  'pioneer_simple24': pioneer_simple24,
+  'infinite_tremendous': infinite_tremendous,
+  'reliant_secure': reliant_secure,
+  'pennywise_conserve_saver6': pennywise_conserve_saver6
+}
+
+def all_estimates():
+  plan_dict = {}
+  for key, value in function_dict.items():
+    plan_dict[key] = test(value)
+  print(json.dumps(plan_dict, sort_keys=True, indent=4))
+
+all_estimates()
