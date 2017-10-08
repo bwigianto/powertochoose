@@ -81,7 +81,7 @@ def pennywise_conserve_saver6(x):
   return base + (0.03 + 0.0357) * 500 + 0.0357 * 500 + (0.119 + 0.0357) * (x - 1000)
 
 def test(f):
-  kwh = [103, 185, 337, 615, 861, 1200, 400, 350, 200, 200, 200, 150]
+  kwh = [int(x) for x in sys.argv[1:]]
   return sum(f(x) for x in kwh)
 
 function_dict = {
