@@ -10,5 +10,5 @@ All you need is python.
 
 ## Have ideas on making this better?
 
-Please open a new issue
+Please open a new [issue](https://github.com/bwigianto/powertochoose/issues)
 
