@@ -1,5 +1,3 @@
-import sys, json
-
 def discount_power_economy12(x):
   base = 3.25 + 5.47
   if x <= 500:
@@ -79,30 +77,3 @@ def pennywise_conserve_saver6(x):
   if x <= 1000:
     return base + (0.03 + 0.0357) * 500 + 0.0357 * (x - 500)
   return base + (0.03 + 0.0357) * 500 + 0.0357 * 500 + (0.119 + 0.0357) * (x - 1000)
-
-def test(f):
-  kwh = [int(x) for x in sys.argv[1:]]
-  return sum(f(x) for x in kwh)
-
-function_dict = {
-  'discount_power_economy12': discount_power_economy12,
-  'gexa_my_choice12': gexa_my_choice12,
-  'discount_power_easy24': discount_power_easy24,
-  'power_express_summer24': power_express_summer24,
-  'infuse_savings6': infuse_savings6,
-  'pioneer_choice24': pioneer_choice24,
-  'green_mountain_conserve12': green_mountain_conserve12,
-  'discount_super_saver': discount_super_saver,
-  'pioneer_simple24': pioneer_simple24,
-  'infinite_tremendous': infinite_tremendous,
-  'reliant_secure': reliant_secure,
-  'pennywise_conserve_saver6': pennywise_conserve_saver6
-}
-
-def all_estimates():
-  plan_dict = {}
-  for key, value in function_dict.items():
-    plan_dict[key] = test(value)
-  print(json.dumps(plan_dict, sort_keys=True, indent=4))
-
-all_estimates()
