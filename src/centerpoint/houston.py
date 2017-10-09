@@ -100,25 +100,3 @@ def life_energy_whole_life_plan_12(x):
   if x <= 1000:
     return 39
   return 117 + (0.079)*(x-1000)
-  
-def test(f):
-  kwh = [103, 185, 337, 615, 861, 1200, 400, 350, 200, 200, 200, 150]
-  return sum(f(x) for x in kwh)
-
-print(test(discount_power_economy12))
-print(test(gexa_my_choice12))
-print(test(discount_power_easy24))
-print(test(power_express_summer24))
-print(test(infuse_savings6))
-print(test(pioneer_choice24))
-print(test(green_mountain_conserve12))
-print(test(discount_super_saver))
-print(test(pioneer_simple24))
-print(test(infinite_tremendous))
-print(test(reliant_secure))
-print(test(pennywise_conserve_saver6))
-print(test(texans_big_savings_plan))
-print(test(infuse_keep_it_simple_savings_3))
-print(test(life_energy_whole_life_plan_16))
-print(test(life_energy_whole_life_plan_12))
-  
