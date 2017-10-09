@@ -78,6 +78,29 @@ def pennywise_conserve_saver6(x):
     return base + (0.03 + 0.0357) * 500 + 0.0357 * (x - 500)
   return base + (0.03 + 0.0357) * 500 + 0.0357 * 500 + (0.119 + 0.0357) * (x - 1000)
 
+def texans_big_savings_plan(x):
+  base = 99
+  if x <= 999:
+    return base
+  if x <= 1500:
+    return base + (.038)*(x - 999)
+  return base + (.038)*500 + (.109)*(x - 1500)
+  
+def infuse_keep_it_simple_savings_3(x):
+  if x <= 1000:
+    return 38
+  return 99 + (0.098)*(x-1000)
+
+def life_energy_whole_life_plan_16(x):
+  if x <= 1000:
+    return 39
+  return 112 + (0.082)*(x-1000)
+
+def life_energy_whole_life_plan_12(x):
+  if x <= 1000:
+    return 39
+  return 117 + (0.079)*(x-1000)
+  
 def test(f):
   kwh = [103, 185, 337, 615, 861, 1200, 400, 350, 200, 200, 200, 150]
   return sum(f(x) for x in kwh)
@@ -94,3 +117,8 @@ print(test(pioneer_simple24))
 print(test(infinite_tremendous))
 print(test(reliant_secure))
 print(test(pennywise_conserve_saver6))
+print(test(texans_big_savings_plan))
+print(test(infuse_keep_it_simple_savings_3))
+print(test(life_energy_whole_life_plan_16))
+print(test(life_energy_whole_life_plan_12))
+  
