@@ -77,3 +77,26 @@ def pennywise_conserve_saver6(x):
   if x <= 1000:
     return base + (0.03 + 0.0357) * 500 + 0.0357 * (x - 500)
   return base + (0.03 + 0.0357) * 500 + 0.0357 * 500 + (0.119 + 0.0357) * (x - 1000)
+
+def texans_big_savings_plan(x):
+  base = 99
+  if x <= 999:
+    return base
+  if x <= 1500:
+    return base + (.038)*(x - 999)
+  return base + (.038)*500 + (.109)*(x - 1500)
+  
+def infuse_keep_it_simple_savings_3(x):
+  if x <= 1000:
+    return 38
+  return 99 + (0.098)*(x-1000)
+
+def life_energy_whole_life_plan_16(x):
+  if x <= 1000:
+    return 39
+  return 112 + (0.082)*(x-1000)
+
+def life_energy_whole_life_plan_12(x):
+  if x <= 1000:
+    return 39
+  return 117 + (0.079)*(x-1000)
